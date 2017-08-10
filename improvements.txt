@@ -1,0 +1,7 @@
+
+1. To make code more readable so everyone can understand functions, variables, and so on
+
+2. Functional testing is inlcuded but need fully testing to ensure a stable system
+
+3. AWS security group should be refine if this is a production. Currently, SSH and TCP accesses are opened to all IP but in production this is insecure. 
+
