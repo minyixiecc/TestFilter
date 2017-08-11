@@ -7,6 +7,8 @@ var filter = {
 	// - return filtered data with status eql 200
 	request: function(req, res){
 
+		console.log('A request is coming...');
+
 		var payload = req.body.payload || '';
 
 		try{

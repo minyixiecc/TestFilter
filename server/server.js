@@ -4,8 +4,12 @@ var express = require("express"),
 var app = express();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true,
+}));
 
 app.all('/*', function(req, res, next){ // Enable Cross Origin Resource Sharing
+
 	//CORS headers
 	res.header("Access-Control-Allow-Origin", "*"); 
 	res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
@@ -23,11 +27,11 @@ app.use('/', require('./routes')); // The list of routes for our application.
 
 // If no route is matched by now, it must be a 400
 app.use(function(err, req, res, next) {
-  res.status(400);
-  res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify({
-    error:'Could not decode request: JSON parsing failed'
-  }, null, 3));
+  	res.status(400);
+  	res.setHeader('Content-Type', 'application/json');
+  	res.send(JSON.stringify({
+    	error:'Could not decode request: JSON parsing failed'
+  	}, null, 3));
 });
 
 // Start the server

@@ -8,4 +8,8 @@ var filter = require('./filter.js');
  */
 router.post('/', filter.request);
 
+router.get('/', function(req, res){
+  res.status(200).end();
+});
+
 module.exports = router;
