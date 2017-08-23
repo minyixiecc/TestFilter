@@ -7,8 +7,6 @@ var filter = {
 	// - return filtered data with status eql 200
 	request: function(req, res){
 
-		console.log('A request is coming...');
-
 		var payload = req.body.payload || '';
 
 		try{
@@ -45,6 +43,7 @@ var filter = {
 // Private function
 
 //!\ METHOD :
+// - param list of objects
 // - return required sets (workflow: completed, type: htv)
 function filterData(payload){
 	var arr = [];
@@ -61,6 +60,7 @@ function filterData(payload){
 }
 
 //!\ METHOD :
+// - param address object
 // - return a concatenation of address
 function concatAddress(address){
 	var combAddress = '';
@@ -86,7 +86,8 @@ function concatAddress(address){
 }
 
 //!\ METHOD :
-// - add address components
+// - param existing address and new component
+// - return new address
 function addAddressComponent(address, component){
 	if(component){
 		address = address + ' ' + component + ' ';

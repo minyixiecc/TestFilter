@@ -1,11 +1,11 @@
-Project Title
+# Project Title
 	Data Filter
 
-Running the tests
-	run mocha in root
+# Tests
+	mocha
 
-Server
+# Server
  	node server/server.js
 
-Author
+# Author
 	Minyi Xie

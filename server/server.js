@@ -1,7 +1,7 @@
-var express = require("express"),
+const express = require("express"),
     bodyParser = require('body-parser');
 
-var app = express();
+const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -37,7 +37,7 @@ app.use(function(err, req, res, next) {
 // Start the server
 app.set('port', process.env.PORT || 3000);
  
-var server = app.listen(app.get('port'), function() { // Start the server
+const server = app.listen(app.get('port'), function() { // Start the server
   console.log('Server starts');
 });
 

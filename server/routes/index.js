@@ -1,14 +1,13 @@
-var express = require('express');
-var router  = express.Router();
-
-var filter = require('./filter.js');
+const express = require('express');
+const router  = express.Router();
+const filter = require('./filter.js');
 
 /*
  * Routes that is used for filter
  */
 router.post('/', filter.request);
 
-router.get('/', function(req, res){
+router.get('/', (req, res) => {
   res.status(200).end();
 });
 
